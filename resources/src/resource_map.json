@@ -1,0 +1,18 @@
+{
+    "media": [
+        {
+            "characterRegex": "[a-z ]",
+            "defName": "FONT_OPENSANS_BOLD_32",
+            "type": "font",
+            "file": "fonts/OpenSans-Bold.ttf"
+        },
+        {
+            "characterRegex": "[a-z ]",
+            "defName": "FONT_OPENSANS_REGULAR_32",
+            "type": "font",
+            "file": "fonts/OpenSans-Regular.ttf"
+        }
+    ],
+    "friendlyVersion": "VERSION",
+    "versionDefName": "APP_RESOURCES"
+}
