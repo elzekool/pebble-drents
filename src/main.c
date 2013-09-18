@@ -66,7 +66,12 @@ void update_time(PblTm* t) {
 		strcpy(rel_text, rels[4]);
 		hour = hour+1;
 	}
-		
+	
+	// Prevent -1 index
+	if (hour == 0) {
+		hour =12;
+	}
+	
 	strcpy(hour_text, numbers[(hour % 12) - 1]);
 			   
 	text_layer_set_text(&minute_layer, minute_text);
@@ -80,6 +85,7 @@ void update_time(PblTm* t) {
  * Initialize Application
  */
 void handle_init(AppContextRef ctx) {
+	(void) ctx;
 	
 	ResHandle light_font_r;
 	ResHandle bold_font_r;
@@ -127,6 +133,7 @@ void handle_init(AppContextRef ctx) {
  * Minute tick handler
  **/
 void handle_minute_tick(AppContextRef ctx, PebbleTickEvent* e) {
+	(void) ctx;
 	update_time(e->tick_time);
 }
 
@@ -134,6 +141,7 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent* e) {
  * Shut down the application
  */
 void handle_deinit(AppContextRef ctx) {
+	(void) ctx;
     fonts_unload_custom_font(light_font);
 	fonts_unload_custom_font(bold_font);
 }
