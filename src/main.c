@@ -67,12 +67,13 @@ void update_time(PblTm* t) {
 		hour = hour+1;
 	}
 	
-	// Prevent -1 index
+	// Make it a 12 hour clock, and prevent -1 index
+	hour = (hour % 12);
 	if (hour == 0) {
-		hour =12;
+		hour = 12;
 	}
 	
-	strcpy(hour_text, numbers[(hour % 12) - 1]);
+	strcpy(hour_text, numbers[hour-1]);
 			   
 	text_layer_set_text(&minute_layer, minute_text);
 	text_layer_set_text(&rel_layer, rel_text);

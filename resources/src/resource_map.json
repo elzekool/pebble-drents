@@ -1,7 +1,7 @@
 {
     "media": [
         {
-            "characterRegex": "[a-z ]",
+            "characterRegex": "[0-9a-z ]",
             "defName": "FONT_OPENSANS_BOLD_32",
             "type": "font",
             "file": "fonts/OpenSans-Bold.ttf"
